@@ -1,6 +1,12 @@
 /*
 !/.github
+!/.github/**
 !/pages
+!/pages/**
+!/screenshots
+!/screenshots/**
 !/src
+!/src/**
 !/.gitignore
 !/Makefile
+!/README.md

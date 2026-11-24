@@ -5,7 +5,7 @@ WINDRES  := windres
 
 SRC_DIR  := src
 OBJ_DIR  := obj
-TARGET   := AgendaWin32.exe
+TARGET   := OpenAgenda.exe
 
 CFLAGS   := -Wall -Wextra -Wshadow -O2 -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0A00 -DCOBJMACROS -I$(SRC_DIR)
 LDFLAGS  := -s -municode -mwindows
