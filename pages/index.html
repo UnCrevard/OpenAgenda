@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda — Calendrier natif Windows en C Win32</title>
+    <meta
+      name="description"
+      content="Application de calendrier native Windows écrite en C Win32 Unicode, sans dépendance externe, avec stockage JSON versionné, thème clair/sombre et notifications tray."
+    />
+    <meta property="og:title" content="Agenda — Calendrier natif Windows en C Win32" />
+    <meta
+      property="og:description"
+      content="Application de calendrier native Windows écrite en C Win32 Unicode, sans dépendance externe, avec stockage JSON versionné, thème clair/sombre et notifications tray."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand-mark">Agenda</a>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="#preview" class="nav-link" data-i18n="navPreview">Aperçu</a>
+          <a href="#features" class="nav-link" data-i18n="navFeatures">Fonctionnalités</a>
+          <a href="#architecture" class="nav-link" data-i18n="navArchitecture">Architecture</a>
+          <a href="#build" class="nav-link" data-i18n="navBuild">Compilation</a>
+        </nav>
+
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" id="preview">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="meta-line" data-i18n="heroMeta">C Win32 Unicode · Zéro dépendance · MinGW</p>
+            <h1 class="hero-title" data-i18n="heroTitle">
+              Un agenda natif Windows, léger et entièrement local.
+            </h1>
+            <p class="hero-subtitle" data-i18n="heroDesc">
+              Écrit en C Win32 Unicode pur sans framework ni moteur web embarqué. Retrouvez vos vues Jour, Semaine, Mois et Année, vos récurrences avancées, vos anniversaires avec calcul d’âge, le thème système Windows et un historique JSON horodaté.
+            </p>
+            <div class="hero-actions">
+              <a href="#build" class="btn-primary" data-i18n="ctaPrimary">Compiler avec MinGW</a>
+              <a href="#features" class="btn-secondary" data-i18n="ctaSecondary">Explorer les fonctions</a>
+            </div>
+
+            <div class="hero-specs">
+              <div>
+                <span class="spec-label" data-i18n="specLangLabel">Code source</span>
+                <span class="spec-value" data-i18n="specLangValue">C Win32 Unicode</span>
+              </div>
+              <div>
+                <span class="spec-label" data-i18n="specStorageLabel">Données &amp; réglages</span>
+                <span class="spec-value" data-i18n="specStorageValue">JSON + agenda.ini</span>
+              </div>
+              <div>
+                <span class="spec-label" data-i18n="specDepLabel">Dépendances externes</span>
+                <span class="spec-value" data-i18n="specDepValue">Aucune</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-preview-shell" id="appPreviewShell" aria-label="Aperçu interactif">
+            <div class="win-titlebar">
+              <div class="win-title-left">
+                <img src="./favicon.svg" width="18" height="18" alt="" aria-hidden="true" />
+                <span>Agenda</span>
+              </div>
+              <button type="button" class="win-theme-toggle" id="previewThemeToggle" data-i18n="previewDarkLabel">
+                Thème sombre
+              </button>
+            </div>
+
+            <div class="win-toolbar">
+              <span class="win-period" id="previewPeriod">Novembre 2026</span>
+              <div class="win-view-tabs" role="tablist" aria-label="Vues">
+                <button type="button" class="win-tab" role="tab" data-view="day" aria-selected="false" data-i18n="tabDay">Jour</button>
+                <button type="button" class="win-tab" role="tab" data-view="week" aria-selected="false" data-i18n="tabWeek">Semaine</button>
+                <button type="button" class="win-tab" role="tab" data-view="month" aria-selected="true" data-i18n="tabMonth">Mois</button>
+                <button type="button" class="win-tab" role="tab" data-view="year" aria-selected="false" data-i18n="tabYear">Année</button>
+              </div>
+            </div>
+
+            <div class="win-canvas">
+              <div id="previewCanvasBody"></div>
+
+              <div class="win-tray-toast" aria-label="Notification">
+                <div>
+                  <div class="toast-app" data-i18n="toastApp">Agenda</div>
+                  <div class="toast-title" data-i18n="toastTitle">[09:00] Marie Dupont (36 ans)</div>
+                  <div class="toast-body" data-i18n="toastBody">Anniversaire : 36 ans — Appeler à midi</div>
+                </div>
+                <img src="./favicon.svg" width="22" height="22" alt="" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="features">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="featuresTitle">
+              Conçu pour rester rapide, lisible et sous votre contrôle.
+            </h2>
+            <p class="section-desc" data-i18n="featuresDesc">
+              Chaque composant d’interface et de persistance utilise directement les API Windows standard, sans inscription dans le Registre.
+            </p>
+          </div>
+
+          <div class="bento-grid">
+            <article class="bento-card span-2">
+              <span class="card-kicker" data-i18n="f1Kicker">01. Vues complètes &amp; édition directe</span>
+              <h3 class="card-title" data-i18n="f1Title">Jour, Semaine, Mois et Année</h3>
+              <p class="card-body" data-i18n="f1Body">
+                Passez instantanément d’une grille horaire quotidienne ou hebdomadaire à une vue mensuelle ou annuelle 4×3. En vue Année, un clic sur une pastille colorée ouvre directement l’événement ou le menu du jour.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="f1L1">Filtrage instantané par mot-clé dans la barre d’outils</li>
+                <li data-i18n="f1L2">Ligne rouge d’heure courante et gestion des chevauchements</li>
+                <li data-i18n="f1L3">Sélecteurs thémés Date, Année (molette &amp; clavier) et Heure</li>
+              </ul>
+            </article>
+
+            <article class="bento-card">
+              <span class="card-kicker" data-i18n="f2Kicker">02. Récurrences &amp; anniversaires</span>
+              <h3 class="card-title" data-i18n="f2Title">Calcul automatique de l’âge</h3>
+              <p class="card-body" data-i18n="f2Body">
+                Planifiez des événements uniques ou répétés par jour, semaine, date fixe du mois, nième jour (ex. premier lundi du mois), année ou en mode Anniversaire.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="f2L1">Affichage de l’âge calculé dans le calendrier et les notifications</li>
+                <li data-i18n="f2L2">Gestion des années bissextiles (29 février)</li>
+                <li data-i18n="f2L3">Sélecteur d’année dédié pour saisir rapidement une année de naissance</li>
+              </ul>
+            </article>
+
+            <article class="bento-card">
+              <span class="card-kicker" data-i18n="f3Kicker">03. Stockage transparent</span>
+              <h3 class="card-title" data-i18n="f3Title">JSON lisible &amp; snapshots illimités</h3>
+              <p class="card-body" data-i18n="f3Body">
+                Choisissez le dossier de vos données. Chaque création, modification ou suppression génère automatiquement une sauvegarde JSON horodatée dans un sous-dossier versions\.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="f3L1">Paramètres locaux dans agenda.ini (zéro écriture dans le Registre)</li>
+                <li data-i18n="f3L2">Conservation de la police personnalisée et de la vue active</li>
+                <li data-i18n="f3L3">Restauration simple par copie de fichier JSON</li>
+              </ul>
+            </article>
+
+            <article class="bento-card span-2">
+              <span class="card-kicker" data-i18n="f4Kicker">04. Intégration Windows native</span>
+              <h3 class="card-title" data-i18n="f4Title">Thème système, tray &amp; notifications</h3>
+              <p class="card-body" data-i18n="f4Body">
+                Détection en direct du mode clair ou sombre Windows, barre de titre et dialogues adaptés, icône dans la zone de notification et démarrage optionnel par raccourci .lnk.
+              </p>
+              <ul class="card-list">
+                <li data-i18n="f4L1">Notifications Windows natives avec description et son .wav personnalisé</li>
+                <li data-i18n="f4L2">Démarrage réduit et minimisation dans le tray</li>
+                <li data-i18n="f4L3">Raccourci .lnk créé uniquement dans le dossier Démarrage Windows</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="architecture">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="archTitle">
+              Des fichiers clairs, lisibles et faciles à sauvegarder.
+            </h2>
+            <p class="section-desc" data-i18n="archDesc">
+              Aucune base binaire propriétaire : inspectez vos événements et vos réglages avec n’importe quel éditeur de texte.
+            </p>
+          </div>
+
+          <div class="arch-grid">
+            <div class="spec-rows">
+              <div class="spec-row">
+                <h3 class="spec-row-title" data-i18n="spec1Title">Configuration locale (agenda.ini)</h3>
+                <p class="spec-row-desc" data-i18n="spec1Desc">
+                  Dossier cible, mode d’affichage, police par défaut, son de rappel et options tray enregistrés à côté de l’exécutable.
+                </p>
+              </div>
+              <div class="spec-row">
+                <h3 class="spec-row-title" data-i18n="spec2Title">Historique versionné (versions\)</h3>
+                <p class="spec-row-desc" data-i18n="spec2Desc">
+                  Chaque modification incrémente un compteur de version et conserve un instantané horodaté prêt à être restauré.
+                </p>
+              </div>
+              <div class="spec-row">
+                <h3 class="spec-row-title" data-i18n="spec3Title">Identité Windows propre</h3>
+                <p class="spec-row-desc" data-i18n="spec3Desc">
+                  Ressource de version intégrée, manifeste DPI Per-Monitor v2 et icône multi-résolutions embarquée dans l’exécutable.
+                </p>
+              </div>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-tabs">
+                <div class="code-tab-group" role="tablist" aria-label="Format de fichiers">
+                  <button type="button" class="code-tab" role="tab" data-code="json" aria-selected="true">events.json</button>
+                  <button type="button" class="code-tab" role="tab" data-code="ini" aria-selected="false">agenda.ini</button>
+                  <button type="button" class="code-tab" role="tab" data-code="makefile" aria-selected="false">Makefile</button>
+                </div>
+                <button type="button" class="copy-btn" id="copyCodeBtn" data-i18n="copyLabel">Copier</button>
+              </div>
+              <pre class="code-pre"><code id="codeSnippetPre"></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="build">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="buildTitle">Compiler depuis les sources sous Windows.</h2>
+            <p class="section-desc" data-i18n="buildDesc">
+              Le projet utilise exclusivement les bibliothèques système Windows livrées avec MinGW-w64.
+            </p>
+          </div>
+
+          <div class="build-grid">
+            <div class="step-card">
+              <h3 class="card-title" data-i18n="buildStep1Title">01. Compiler avec MinGW</h3>
+              <p class="card-body" data-i18n="buildStep1Desc">
+                Exécutez mingw32-make.exe à la racine du dépôt. Les fichiers objets sont générés dans obj\ et l’exécutable final AgendaWin32.exe est prêt à l’emploi.
+              </p>
+              <div class="cmd-box">
+                <code>mingw32-make.exe</code>
+                <button type="button" class="copy-btn" id="copyBuildCmdBtn" data-i18n="copyLabel">Copier</button>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <h3 class="card-title" data-i18n="buildStep2Title">02. Publier ce site sur GitHub Pages</h3>
+              <p class="card-body" data-i18n="buildStep2Desc">
+                Ce site statique réside dans le dossier pages\. Configurez GitHub Pages sur la branche principale et le dossier /pages (ou déployez le dossier via GitHub Actions).
+              </p>
+              <div class="cmd-box">
+                <code>pages/index.html · pages/styles.css · pages/app.js</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span data-i18n="footerText">Agenda — Logiciel libre C Win32 Unicode</span>
+        <div class="footer-links">
+          <a href="#preview" data-i18n="navPreview">Aperçu</a>
+          <a href="#features" data-i18n="navFeatures">Fonctionnalités</a>
+          <a href="#architecture" data-i18n="navArchitecture">Architecture</a>
+          <a href="#build" data-i18n="navBuild">Compilation</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

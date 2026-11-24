@@ -1,0 +1,51 @@
+#include <windows.h>
+#include <winver.h>
+
+#ifndef VS_VERSION_INFO
+#define VS_VERSION_INFO 1
+#endif
+
+/* Embed application icon (used by Windows Explorer, taskbar, shortcuts, and notifications) */
+101 ICON "agenda.ico"
+
+/* Embed Common Controls v6 and DPI awareness manifest */
+1 RT_MANIFEST "app.manifest"
+
+/* Version metadata so Windows notifications display "Agenda" instead of the .exe filename */
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0x0L
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040C04B0"
+        BEGIN
+            VALUE "CompanyName",      "Agenda\0"
+            VALUE "FileDescription",  "Agenda\0"
+            VALUE "FileVersion",      "1.0.0.0\0"
+            VALUE "InternalName",     "Agenda\0"
+            VALUE "OriginalFilename", "Agenda.exe\0"
+            VALUE "ProductName",      "Agenda\0"
+            VALUE "ProductVersion",   "1.0.0.0\0"
+        END
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "Agenda\0"
+            VALUE "FileDescription",  "Agenda\0"
+            VALUE "FileVersion",      "1.0.0.0\0"
+            VALUE "InternalName",     "Agenda\0"
+            VALUE "OriginalFilename", "Agenda.exe\0"
+            VALUE "ProductName",      "Agenda\0"
+            VALUE "ProductVersion",   "1.0.0.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x040C, 1200, 0x0409, 1200
+    END
+END
