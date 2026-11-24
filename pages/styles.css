@@ -794,33 +794,25 @@ select {
   color: var(--text-primary);
 }
 
-/* Build Section */
-.build-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.step-card {
-  padding: 24px;
+/* Releases Download Banner */
+.release-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 36px;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
 }
 
-.cmd-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 14px;
-  padding: 12px 14px;
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  overflow-x: auto;
+.release-copy {
+  max-width: 60ch;
+}
+
+.release-copy .section-title {
+  margin-bottom: 10px;
 }
 
 /* Footer */
@@ -853,8 +845,7 @@ select {
 /* Responsive */
 @media (max-width: 960px) {
   .hero-grid,
-  .arch-grid,
-  .build-grid {
+  .arch-grid {
     grid-template-columns: 1fr;
   }
   .bento-grid {
@@ -885,5 +876,8 @@ select {
   }
   .section-block {
     padding-block: 48px;
+  }
+  .release-banner {
+    padding: 24px;
   }
 }

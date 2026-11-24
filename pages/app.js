@@ -9,12 +9,12 @@
       navFeatures: 'Fonctionnalités',
       navPreview: 'Aperçu',
       navArchitecture: 'Architecture',
-      navBuild: 'Compilation',
-      heroMeta: 'C Win32 Unicode · Zéro dépendance · MinGW',
+      navDownload: 'Télécharger',
+      heroMeta: 'C Win32 Unicode · Zéro dépendance · Windows',
       heroTitle: 'Un agenda natif Windows, léger et entièrement local.',
       heroDesc:
         'Écrit en C Win32 Unicode pur sans framework ni moteur web embarqué. Retrouvez vos vues Jour, Semaine, Mois et Année, vos récurrences avancées, vos anniversaires avec calcul d’âge, le thème système Windows et un historique JSON horodaté.',
-      ctaPrimary: 'Compiler avec MinGW',
+      ctaPrimary: 'Télécharger (GitHub Releases)',
       ctaSecondary: 'Explorer les fonctions',
       specLangLabel: 'Code source',
       specLangValue: 'C Win32 Unicode',
@@ -74,15 +74,10 @@
       spec3Title: 'Identité Windows propre',
       spec3Desc:
         'Ressource de version intégrée, manifeste DPI Per-Monitor v2 et icône multi-résolutions embarquée dans l’exécutable.',
-      buildTitle: 'Compiler depuis les sources sous Windows.',
-      buildDesc:
-        'Le projet utilise exclusivement les bibliothèques système Windows livrées avec MinGW-w64.',
-      buildStep1Title: '01. Compiler avec MinGW',
-      buildStep1Desc:
-        'Exécutez mingw32-make.exe à la racine du dépôt. Les fichiers objets sont générés dans obj\\ et l’exécutable final AgendaWin32.exe est prêt à l’emploi.',
-      buildStep2Title: '02. Publier ce site sur GitHub Pages',
-      buildStep2Desc:
-        'Ce site statique réside dans le dossier pages\\. Configurez GitHub Pages sur la branche principale et le dossier /pages (ou déployez le dossier via GitHub Actions).',
+      downloadTitle: 'Télécharger Agenda pour Windows',
+      downloadDesc:
+        'Récupérez la dernière version prête à l’emploi (AgendaWin32.exe) ainsi que les notes de version directement depuis la page Releases du dépôt GitHub.',
+      downloadCta: 'Ouvrir les Releases GitHub',
       copyLabel: 'Copier',
       copiedLabel: 'Copié',
       footerText: 'Agenda — Logiciel libre C Win32 Unicode',
@@ -104,12 +99,12 @@
       navFeatures: 'Features',
       navPreview: 'Preview',
       navArchitecture: 'Architecture',
-      navBuild: 'Build',
-      heroMeta: 'C Win32 Unicode · Zero Dependencies · MinGW',
+      navDownload: 'Download',
+      heroMeta: 'C Win32 Unicode · Zero Dependencies · Windows',
       heroTitle: 'A fast, local-first native Windows calendar.',
       heroDesc:
         'Built in pure C Win32 Unicode with no frameworks or embedded browser runtime. Includes Day, Week, Month, and Year views, flexible recurrences, birthdays with live age calculation, Windows Light/Dark theming, and timestamped JSON history.',
-      ctaPrimary: 'Build with MinGW',
+      ctaPrimary: 'Download (GitHub Releases)',
       ctaSecondary: 'Explore features',
       specLangLabel: 'Source language',
       specLangValue: 'C Win32 Unicode',
@@ -169,15 +164,10 @@
       spec3Title: 'Clean Windows identity',
       spec3Desc:
         'Embeds version metadata, Per-Monitor DPI v2 manifest, and a multi-resolution icon directly into the binary.',
-      buildTitle: 'Compile from source on Windows.',
-      buildDesc:
-        'Links solely against standard Windows system libraries provided by MinGW-w64.',
-      buildStep1Title: '01. Build with MinGW',
-      buildStep1Desc:
-        'Run mingw32-make.exe from the repository root. Object files are placed in obj\\ and the standalone AgendaWin32.exe binary is ready immediately.',
-      buildStep2Title: '02. Publish on GitHub Pages',
-      buildStep2Desc:
-        'This static site lives inside the pages\\ folder. Point GitHub Pages to the main branch /pages folder or deploy pages/ via GitHub Actions.',
+      downloadTitle: 'Download Agenda for Windows',
+      downloadDesc:
+        'Get the latest ready-to-run binary (AgendaWin32.exe) and release notes directly from the GitHub repository Releases page.',
+      downloadCta: 'Open GitHub Releases',
       copyLabel: 'Copy',
       copiedLabel: 'Copied',
       footerText: 'Agenda — Pure C Win32 Unicode Calendar',
@@ -199,12 +189,12 @@
       navFeatures: 'Funciones',
       navPreview: 'Vista previa',
       navArchitecture: 'Arquitectura',
-      navBuild: 'Compilación',
-      heroMeta: 'C Win32 Unicode · Sin dependencias · MinGW',
+      navDownload: 'Descargar',
+      heroMeta: 'C Win32 Unicode · Sin dependencias · Windows',
       heroTitle: 'Un calendario nativo para Windows, rápido y local.',
       heroDesc:
         'Escrito en C Win32 Unicode puro sin frameworks ni navegadores embebidos. Incluye vistas de Día, Semana, Mes y Año, recurrencias flexibles, cumpleaños con cálculo de edad, tema del sistema Windows e historial JSON con marca de tiempo.',
-      ctaPrimary: 'Compilar con MinGW',
+      ctaPrimary: 'Descargar (GitHub Releases)',
       ctaSecondary: 'Ver funciones',
       specLangLabel: 'Código fuente',
       specLangValue: 'C Win32 Unicode',
@@ -264,15 +254,10 @@
       spec3Title: 'Identidad nativa de Windows',
       spec3Desc:
         'Incluye metadatos de versión, manifiesto DPI Per-Monitor v2 e icono multi-resolución en el ejecutable.',
-      buildTitle: 'Compilar desde el código en Windows.',
-      buildDesc:
-        'Enlaza únicamente con bibliotecas estándar del sistema Windows incluidas en MinGW-w64.',
-      buildStep1Title: '01. Compilar con MinGW',
-      buildStep1Desc:
-        'Ejecuta mingw32-make.exe en la raíz del proyecto. Los objetos se crean en obj\\ junto con AgendaWin32.exe.',
-      buildStep2Title: '02. Publicar en GitHub Pages',
-      buildStep2Desc:
-        'Este sitio estático se encuentra en la carpeta pages\\. Publica la carpeta /pages desde los ajustes de GitHub Pages o mediante GitHub Actions.',
+      downloadTitle: 'Descargar Agenda para Windows',
+      downloadDesc:
+        'Obtén la última versión lista para usar (AgendaWin32.exe) y las notas de lanzamiento directamente en la página Releases de GitHub.',
+      downloadCta: 'Abrir GitHub Releases',
       copyLabel: 'Copiar',
       copiedLabel: 'Copiado',
       footerText: 'Agenda — Calendario nativo C Win32 Unicode',
@@ -294,12 +279,12 @@
       navFeatures: 'Funktionen',
       navPreview: 'Vorschau',
       navArchitecture: 'Architektur',
-      navBuild: 'Kompilieren',
-      heroMeta: 'C Win32 Unicode · Keine Abhängigkeiten · MinGW',
+      navDownload: 'Download',
+      heroMeta: 'C Win32 Unicode · Keine Abhängigkeiten · Windows',
       heroTitle: 'Ein schneller, lokaler Kalender nativ für Windows.',
       heroDesc:
         'Geschrieben in reinem C Win32 Unicode ohne Frameworks oder eingebetteten Browser. Bietet Tag-, Wochen-, Monats- und Jahresansicht, flexible Wiederholungen, Geburtstage mit Altersberechnung, Windows-Designanpassung und zeitgestempelte JSON-Versionierung.',
-      ctaPrimary: 'Mit MinGW bauen',
+      ctaPrimary: 'Herunterladen (GitHub Releases)',
       ctaSecondary: 'Funktionen entdecken',
       specLangLabel: 'Quellcode',
       specLangValue: 'C Win32 Unicode',
@@ -359,15 +344,10 @@
       spec3Title: 'Saubere Windows-Metadaten',
       spec3Desc:
         'Eingebettete Versionsressource, Per-Monitor-DPI-v2-Manifest und mehrstufiges Anwendungssymbol.',
-      buildTitle: 'Unter Windows aus den Quellen bauen.',
-      buildDesc:
-        'Linkt ausschließlich gegen die in MinGW-w64 enthaltenen Windows-Systembibliotheken.',
-      buildStep1Title: '01. Mit MinGW kompilieren',
-      buildStep1Desc:
-        'Führen Sie mingw32-make.exe im Projektverzeichnis aus. Objektdateien landen in obj\\, das Ergebnis ist AgendaWin32.exe.',
-      buildStep2Title: '02. Auf GitHub Pages veröffentlichen',
-      buildStep2Desc:
-        'Diese statische Website liegt im Ordner pages\\. Aktivieren Sie GitHub Pages für /pages oder nutzen Sie GitHub Actions.',
+      downloadTitle: 'Agenda für Windows herunterladen',
+      downloadDesc:
+        'Laden Sie die aktuelle ausführbare Datei (AgendaWin32.exe) sowie die Versionshinweise direkt auf der GitHub-Releases-Seite herunter.',
+      downloadCta: 'GitHub Releases öffnen',
       copyLabel: 'Kopieren',
       copiedLabel: 'Kopiert',
       footerText: 'Agenda — Nativer C-Win32-Unicode-Kalender',
@@ -418,19 +398,42 @@
       'SoundEnabled=1\n' +
       'SoundPath=\n\n' +
       '[System]\n' +
-      'StartWithWindows=0',
-    makefile:
-      'CC     := gcc\n' +
-      'CFLAGS := -Wall -Wextra -Wshadow -O2 -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0A00\n' +
-      'LIBS   := -luser32 -lgdi32 -lcomctl32 -lcomdlg32 -lshell32 -lole32 -luuid -lwinmm -lshlwapi\n\n' +
-      '$(TARGET): $(OBJS) $(RES_OBJ)\n' +
-      '\t$(CC) -s -municode -mwindows -o $@ $^ $(LIBS)'
+      'StartWithWindows=0'
   };
 
   var currentLang = 'fr';
   var currentView = 'month';
   var currentCodeTab = 'json';
   var isPreviewDark = false;
+
+  function resolveReleasesUrl() {
+    var meta = document.querySelector('meta[name="github-releases-url"]');
+    if (meta) {
+      var explicit = (meta.getAttribute('content') || '').trim();
+      if (explicit) return explicit;
+    }
+
+    var host = (window.location.hostname || '').toLowerCase();
+    var match = host.match(/^([^.]+)\.github\.io$/);
+    if (match) {
+      var owner = match[1];
+      var segments = window.location.pathname.split('/').filter(Boolean);
+      if (segments.length > 0) {
+        return 'https://github.com/' + owner + '/' + segments[0] + '/releases';
+      }
+      return 'https://github.com/' + owner + '?tab=repositories';
+    }
+
+    return 'https://github.com';
+  }
+
+  function applyReleasesLinks() {
+    var url = resolveReleasesUrl();
+    var links = document.querySelectorAll('.js-releases-link');
+    for (var i = 0; i < links.length; i++) {
+      links[i].setAttribute('href', url);
+    }
+  }
 
   function detectInitialLang() {
     var params = new URLSearchParams(window.location.search);
@@ -662,10 +665,8 @@
     attachCopyHandler(document.getElementById('copyCodeBtn'), function () {
       return CODE_SNIPPETS[currentCodeTab] || '';
     });
-    attachCopyHandler(document.getElementById('copyBuildCmdBtn'), function () {
-      return 'mingw32-make.exe';
-    });
 
+    applyReleasesLinks();
     setLanguage(detectInitialLang());
     renderCodeSnippet();
   });
